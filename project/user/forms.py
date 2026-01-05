@@ -9,11 +9,12 @@ class UserForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['username', 'email']
-        def clean(self):
-            cleaned_data = super().clean()
-            password1 = cleaned_data.get('password')
-            password2 = cleaned_data.get('password_confirm')
-            if password1 and password2 and password1 != password2:
-                self.add_error('password_confirm')
 
-            return cleaned_data
+    def clean(self):
+        cleaned_data = super().clean()
+        password1 = cleaned_data.get('password')
+        password2 = cleaned_data.get('password_confirm')
+        if password1 and password2 and password1 != password2:
+            self.add_error('password_confirm')
+
+        return cleaned_data
