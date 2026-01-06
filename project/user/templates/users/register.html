@@ -45,7 +45,7 @@
     </style>
 </head>
 <body>
-    <h2>Регистрация</h2>
+    <h2>Реєстрація</h2>
 
     <form method="post">
         {% csrf_token %}
@@ -70,11 +70,11 @@
             </div>
         {% endif %}
 
-        <button type="submit" class="btn">Зарегистрироваться</button>
+        <button type="submit" class="btn">Зареєструватися</button>
     </form>
 
     <div class="link">
-        Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a>
+        Уже есть аккаунт? <a href="{% url 'login' %}">Увійти</a>
     </div>
 </body>
 </html>
