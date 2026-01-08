@@ -18,6 +18,8 @@ def register_user(request):
             user = form.save(commit=False)
             user.set_password(form.cleaned_data['password'])
             user.save()
+            admin_email(user)
+            welcome_email(user)
             return redirect('home')
 
     return render(request, 'users/register.html', {'form': form})
@@ -43,9 +45,7 @@ def admin_email(request: HttpRequest) -> HttpResponse:
             return redirect('home')
 
 
-
-
-
+def welcome_email(user):
 
 
 
