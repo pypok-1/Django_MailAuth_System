@@ -1,5 +1,3 @@
-![Django](https://img.shields.io/badge/Django-4.2-green.svg)
-![Python](https://img.shields.io/badge/Python-3.11-blue.svg)
 # 🚀 User Registration System | Django
 
 <div align="center">
