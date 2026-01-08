@@ -4,7 +4,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.http.request import HttpRequest
 from django.http.response import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
-
+from django.core.mail import send_mail
 from .forms import UserForm
 
 
@@ -18,28 +18,31 @@ def register_user(request):
             user = form.save(commit=False)
             user.set_password(form.cleaned_data['password'])
             user.save()
-            return redirect('login')
+            return redirect('home')
 
     return render(request, 'users/register.html', {'form': form})
 
 
-def login_view(request):
-    if request.method == 'GET':
-        form = AuthenticationForm(request)
-        return render(request, 'users/login.html', {'form': form})
+def home_view(request):
+    return render(request, 'users/home.html')
 
+
+def feedback(request: HttpRequest) -> HttpResponse:
     if request.method == 'POST':
-        form = AuthenticationForm(request.POST)
+        form = UserForm(request.POST)
         if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
+            user = form.save(commit=False)
+            user.set_password(form.cleaned_data['password'])
+            user.save()
+            send_mail(
+                subject = "Нова реєстрація на сайті",
+                message = f"Новий користувач: {user.username} | Email: {user.email}",
+                from_email= 'test@test.com',
+                recipient_list = ['admin@example.com'],
+            )
+            return redirect('home')
 
-            user = authenticate(request, username=username, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect('')
 
-    return render(request, 'users/login.html', {'form': form})
 
 
 
