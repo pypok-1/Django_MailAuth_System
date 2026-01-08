@@ -18,7 +18,7 @@ def register_user(request):
             user.set_password(form.cleaned_data['password'])
             user.save()
             send_mail(
-                subject="Нова реєстрація на сайті",
+                subject="Нова реєстраціz на сайті",
                 message=f"Новий користувач: {user.username} | Email: {user.email}",
                 from_email='test@test.com',
                 recipient_list=['admin@example.com'],
@@ -44,3 +44,4 @@ def register_user(request):
 
 def home_view(request):
     return render(request, 'users/home.html')
+
