@@ -7,5 +7,5 @@
 ![Email](https://img.shields.io/badge/Email_Notifications-4285F4?style=for-the-badge&logo=gmail&logoColor=white)
 
 <p align="center">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzV4dXZpZG50eHd5dnBtbjdqYXdzdG14YXIxN3l6cmV5dG40Ynl5NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/h4UMjKpOtlrM4f81rX/giphy.gif" width="600" alt="Registration Demo">
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmZoMTRra3AxcnJlMDNuNDJteTR3Z2VxMm4wNmUxaGU3ZnN3Y25wNSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/LMt9638dO8dftAjtco/giphy.gif" width="600" alt="Registration Demo">
 </p>
