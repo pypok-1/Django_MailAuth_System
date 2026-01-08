@@ -27,7 +27,7 @@ def home_view(request):
     return render(request, 'users/home.html')
 
 
-def feedback(request: HttpRequest) -> HttpResponse:
+def admin_email(request: HttpRequest) -> HttpResponse:
     if request.method == 'POST':
         form = UserForm(request.POST)
         if form.is_valid():
@@ -41,6 +41,8 @@ def feedback(request: HttpRequest) -> HttpResponse:
                 recipient_list = ['admin@example.com'],
             )
             return redirect('home')
+
+
 
 
 
